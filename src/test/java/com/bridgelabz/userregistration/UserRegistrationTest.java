@@ -34,4 +34,19 @@ public class UserRegistrationTest {
         boolean result=user.isValidLastName("sapkal");
         Assert.assertFalse(result);
     }
+
+    // test email
+    @Test
+    public void testValidEmails() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidEmail("abc.xyz@bl.co.in");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void testInvalidEmails() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidEmail("abc.xyz@bl");
+        Assert.assertFalse(result);
+    }
 }

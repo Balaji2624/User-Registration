@@ -15,9 +15,17 @@ public class UserRegistration {
          String regex = "^[A-Z][a-zA-Z]{2,}$";
          return lastName.matches(regex);
      }
+
+     // validate email
+     public boolean isValidEmail(String email) {
+
+         String regex = "^[a-zA-Z]{3}(\\.[a-zA-Z]{3})?@[a-zA-Z]{2}\\.[a-zA-Z]{2}(\\.[a-zA-Z]{2})?$";
+         return email.matches(regex);
+     }
     public static void main(String[] args) {
         UserRegistration userRegistration=new UserRegistration();
         System.out.println(userRegistration.isValidFirstName("balaji"));
         System.out.println(userRegistration.isValidLastName("Sapkal"));
+        System.out.println(userRegistration.isValidEmail("abc.xyz@bl.co.in"));
     }
 }
