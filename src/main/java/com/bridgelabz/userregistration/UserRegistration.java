@@ -36,12 +36,20 @@ public class UserRegistration {
          String regex = "^.{8,}$";
          return password != null && password.matches(regex);
      }
+
+     // validate password rule-2
+     public boolean isValidPasswordRule2(String password) {
+
+         String regex = "^(?=.*[A-Z]).{8,}$";
+         return password != null && password.matches(regex);
+     }
     public static void main(String[] args) {
         UserRegistration userRegistration=new UserRegistration();
         System.out.println(userRegistration.isValidFirstName("balaji"));
         System.out.println(userRegistration.isValidLastName("Sapkal"));
         System.out.println(userRegistration.isValidEmail("abc.xyz@bl.co.in"));
         System.out.println(userRegistration.isValidMobileNumber("91 9919819801"));
-        System.out.println(userRegistration.isValidMobileNumber("pass"));
+        System.out.println(userRegistration.isValidPassword("pass"));
+        System.out.println(userRegistration.isValidPasswordRule2("Password"));
     }
 }

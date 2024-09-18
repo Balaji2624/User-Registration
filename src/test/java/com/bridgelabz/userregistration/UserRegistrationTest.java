@@ -79,4 +79,19 @@ public class UserRegistrationTest {
         boolean result=user.isValidPassword("pass");
         Assert.assertFalse(result);
     }
+
+    // test password rule-2
+    @Test
+    public void testValidPasswordsRule2() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidPasswordRule2("Password");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void testInvalidPasswordsRule2() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidPasswordRule2("pass");
+        Assert.assertFalse(result);
+    }
 }
