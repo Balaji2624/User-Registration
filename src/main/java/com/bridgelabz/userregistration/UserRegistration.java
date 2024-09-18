@@ -50,6 +50,16 @@ public class UserRegistration {
          String regex = "^(?=.*[A-Z])(?=.*\\d).{8,}$";
          return password != null && password.matches(regex);
      }
+
+     // validate password rule-4
+     public static boolean isValidPasswordRule4(String password) {
+
+         String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$";
+
+         int specialCharCount = password.replaceAll("[A-Za-z0-9]", "").length();
+
+         return password != null && password.matches(regex) && specialCharCount == 1;
+     }
     public static void main(String[] args) {
         UserRegistration userRegistration=new UserRegistration();
         System.out.println(userRegistration.isValidFirstName("balaji"));
@@ -59,5 +69,6 @@ public class UserRegistration {
         System.out.println(userRegistration.isValidPassword("pass"));
         System.out.println(userRegistration.isValidPasswordRule2("Password"));
         System.out.println(userRegistration.isValidPasswordRule3("Password1"));
+        System.out.println(userRegistration.isValidPasswordRule4("Password12"));
     }
 }
