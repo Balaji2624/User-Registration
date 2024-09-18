@@ -29,11 +29,19 @@ public class UserRegistration {
          String regex = "^[0-9]{2} [0-9]{10}$";
          return mobileNumber.matches(regex);
      }
+
+     // validate password rule-1
+     public boolean isValidPassword(String password) {
+
+         String regex = "^.{8,}$";
+         return password != null && password.matches(regex);
+     }
     public static void main(String[] args) {
         UserRegistration userRegistration=new UserRegistration();
         System.out.println(userRegistration.isValidFirstName("balaji"));
         System.out.println(userRegistration.isValidLastName("Sapkal"));
         System.out.println(userRegistration.isValidEmail("abc.xyz@bl.co.in"));
         System.out.println(userRegistration.isValidMobileNumber("91 9919819801"));
+        System.out.println(userRegistration.isValidMobileNumber("pass"));
     }
 }

@@ -64,4 +64,19 @@ public class UserRegistrationTest {
         boolean result=user.isValidMobileNumber("123 9919819801");
         Assert.assertFalse(result);
     }
+
+    // test password
+    @Test
+    public void testValidPasswords() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidPassword("password");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void testInvalidPasswords() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidPassword("pass");
+        Assert.assertFalse(result);
+    }
 }
