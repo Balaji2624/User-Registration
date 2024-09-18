@@ -43,6 +43,13 @@ public class UserRegistration {
          String regex = "^(?=.*[A-Z]).{8,}$";
          return password != null && password.matches(regex);
      }
+
+     // validate password rule-3
+     public static boolean isValidPasswordRule3(String password) {
+
+         String regex = "^(?=.*[A-Z])(?=.*\\d).{8,}$";
+         return password != null && password.matches(regex);
+     }
     public static void main(String[] args) {
         UserRegistration userRegistration=new UserRegistration();
         System.out.println(userRegistration.isValidFirstName("balaji"));
@@ -51,5 +58,6 @@ public class UserRegistration {
         System.out.println(userRegistration.isValidMobileNumber("91 9919819801"));
         System.out.println(userRegistration.isValidPassword("pass"));
         System.out.println(userRegistration.isValidPasswordRule2("Password"));
+        System.out.println(userRegistration.isValidPasswordRule3("Password1"));
     }
 }
