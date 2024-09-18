@@ -49,4 +49,19 @@ public class UserRegistrationTest {
         boolean result=user.isValidEmail("abc.xyz@bl");
         Assert.assertFalse(result);
     }
+
+    // test mobile number
+    @Test
+    public void testValidMobileNumber() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidMobileNumber("91 9919819801");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void testInvalidMobileNumber() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidMobileNumber("123 9919819801");
+        Assert.assertFalse(result);
+    }
 }

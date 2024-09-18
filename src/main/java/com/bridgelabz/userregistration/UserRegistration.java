@@ -22,10 +22,18 @@ public class UserRegistration {
          String regex = "^[a-zA-Z]{3}(\\.[a-zA-Z]{3})?@[a-zA-Z]{2}\\.[a-zA-Z]{2}(\\.[a-zA-Z]{2})?$";
          return email.matches(regex);
      }
+
+     // validate mobile number
+     public boolean isValidMobileNumber(String mobileNumber) {
+
+         String regex = "^[0-9]{2} [0-9]{10}$";
+         return mobileNumber.matches(regex);
+     }
     public static void main(String[] args) {
         UserRegistration userRegistration=new UserRegistration();
         System.out.println(userRegistration.isValidFirstName("balaji"));
         System.out.println(userRegistration.isValidLastName("Sapkal"));
         System.out.println(userRegistration.isValidEmail("abc.xyz@bl.co.in"));
+        System.out.println(userRegistration.isValidMobileNumber("91 9919819801"));
     }
 }
