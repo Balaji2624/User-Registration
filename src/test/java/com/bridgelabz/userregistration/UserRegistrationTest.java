@@ -109,4 +109,18 @@ public class UserRegistrationTest {
         boolean result=user.isValidPasswordRule3("password");
         Assert.assertFalse(result);
     }
+
+    // test sample email
+    @Test
+    public void EmailCorrectTest() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidSampleEmail("abc.xyz@bl.co.in");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void EmailIncorrectTest() {
+        UserRegistration user=new UserRegistration();
+        boolean result=user.isValidSampleEmail("abc.com");
+        Assert.assertFalse(result);
+    }
 }

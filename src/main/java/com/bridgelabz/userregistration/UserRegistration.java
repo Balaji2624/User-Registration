@@ -50,6 +50,13 @@ public class UserRegistration {
          String regex = "^(?=.*[A-Z])(?=.*\\d).{8,}$";
          return password != null && password.matches(regex);
      }
+
+     // validate sample email
+     public static boolean isValidSampleEmail(String email) {
+         // Regex to validate the email structure
+         String regex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+         return email != null && email.matches(regex);
+     }
     public static void main(String[] args) {
         UserRegistration userRegistration=new UserRegistration();
         System.out.println(userRegistration.isValidFirstName("balaji"));
@@ -59,5 +66,6 @@ public class UserRegistration {
         System.out.println(userRegistration.isValidPassword("pass"));
         System.out.println(userRegistration.isValidPasswordRule2("Password"));
         System.out.println(userRegistration.isValidPasswordRule3("Password1"));
+        System.out.println(userRegistration.isValidSampleEmail("balajisapkal3062001@gmail.com"));
     }
 }
